@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Resizer from "react-image-file-resizer";
-import { Card, Button, Space, message, Input } from "antd";
+import { Card, Button, Space, message } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 
 const App = () => {
@@ -10,7 +10,8 @@ const App = () => {
 
   const fileSelectedHandler = (event) => {
     let img = event.target.files[0];
-
+    
+    // Resize according to profile or wallpaper
     let width = 18;
     let height = 18;
     if (imgType !== "profile") {
@@ -30,8 +31,6 @@ const App = () => {
       },
       "base64"
     );
-
-    console.log(resizedImgs);
   };
 
   const fileUploadHandler = () => {
